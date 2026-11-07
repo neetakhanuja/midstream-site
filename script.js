@@ -111,10 +111,10 @@
 
   /* ---------- overview previews ---------- */
   var wp = document.getElementById("week-preview");
-  [["1", "People and days", "social presence · activities · feeling valued", COL.yellow],
-   ["2", "Choices and abilities", "agency · self-efficacy", COL.amber],
-   ["3", "Body, age and time", "aging process · age associations", COL.blue],
-   ["4", "Feelings and the years ahead", "emotions · life satisfaction", COL.orange]].forEach(function (w) {
+  [["1", "Starts from the person’s own words", "whatever they bring to the first session", COL.yellow],
+   ["2", "Follows what comes up", "each question opens a different part of life", COL.amber],
+   ["3", "Keeps track of all nine", "and returns to the parts not yet explored", COL.blue],
+   ["4", "Ends each week with a step", "chosen by the person, or a decision to pause", COL.orange]].forEach(function (w) {
     var row = el("div", { style: "display: flex; gap: 14px; align-items: flex-start" });
     row.appendChild(el("div", { "class": "dot", style: "background: " + w[3] }, w[0]));
     var t = el("div");
@@ -138,10 +138,10 @@
 
   /* ---------- program ---------- */
   var weeks = document.getElementById("weeks");
-  [["Week 1", "People and days", "social presence · activities · feeling valued", "Someone Needed Me", "Before the surgery, who looked after the lawn? What did it mean to you to be the one doing it?", COL.yellow],
-   ["Week 2", "Choices and abilities", "agency · self-efficacy", "One Courageous No", "When your son decided to hire the service, were you part of that decision?", COL.amber],
-   ["Week 3", "Body, age and time", "aging process · age associations", "Changed with Age", "What has the surgery changed about what you can do, and what you expect of yourself?", COL.blue],
-   ["Week 4", "Feelings and the years ahead", "emotions · life satisfaction", "It Gave Me Hope", "Since the surgery, has anything given you hope, even something small?", COL.orange]].forEach(function (w) {
+  [["Session 1", "What the yard meant to him", "came up: feeling valued · social presence · activities", "Someone Needed Me", "Before the surgery, who looked after the lawn? What did it mean to you to be the one doing it?", COL.yellow],
+   ["Session 2", "The decision his son made", "came up: agency · age associations", "One Courageous No", "When your son decided to hire the service, were you part of that decision?", COL.amber],
+   ["Session 3", "His knee, and what he can still do", "came up: aging process · self-efficacy", "Changed with Age", "What has the surgery changed about what you can do, and what you expect of yourself?", COL.blue],
+   ["Session 4", "How he feels, and what comes next", "came up: emotions · life satisfaction", "It Gave Me Hope", "Since the surgery, has anything given you hope, even something small?", COL.orange]].forEach(function (w) {
     var b = el("div", { "class": "box week" });
     b.appendChild(el("div", { "class": "bar", style: "background: " + w[5] }));
     b.appendChild(el("div", { style: "font-size: 12px; letter-spacing: 0.14em; color: #6B6259; text-transform: uppercase" }, w[0]));
