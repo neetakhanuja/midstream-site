@@ -152,7 +152,7 @@
 
   var phases = document.getElementById("phases");
   [["Months 1–2", "Co-design", "Adapt the booklet, cards and map with clinicians, social workers, chaplains and family caregivers."],
-   ["Months 3–4", "Pilot at home", "A small number of patients and families use the toolkit at home between visits."],
+   ["Months 3–4", "Pilot at home", "A small number of patients and families use the toolkit at home between visits, with the option of facilitator-led synthesis."],
    ["Months 5–6", "Learn and refine", "Interviews with participants and the care team. A revised toolkit and a short report."]].forEach(function (p) {
     var d = el("div", { "class": "phase" });
     d.appendChild(el("div", { "class": "when" }, p[0]));
@@ -178,12 +178,25 @@
     aspects.appendChild(r);
   });
 
+  var syn = document.getElementById("synthesis-steps");
+  [["1", "Reflect", "The person completes the booklet, cards and map at their own pace."],
+   ["2", "Draft", "A trained facilitator drafts a short synthesis of the themes."],
+   ["3", "Review", "The person reviews, revises and approves the summary."],
+   ["4", "Choose", "The person decides whether to share it, and with whom."]].forEach(function (r) {
+    var row = el("div", { style: "display: flex; gap: 16px; align-items: flex-start" });
+    row.appendChild(el("div", { "class": "dot", style: "border-radius: 17px; background: #F6F5F2; border: 1px solid #D9CEBF" }, r[0]));
+    var t = el("div");
+    t.appendChild(el("div", { style: "font-weight: 600" }, r[1]));
+    t.appendChild(el("div", { style: "font-size: 15px; color: #6B6259" }, r[2]));
+    row.appendChild(t);
+    syn.appendChild(row);
+  });
+
   var pq = document.getElementById("pilot-questions");
-  ["Do patients and families use the booklet at home, and on which days?",
-   "Which parts of life come up most often after a change in health?",
-   "Does the map help families and care teams understand what matters to the person?",
-   "Which cards and prompts need rewording for this setting?",
-   "What would clinicians need for the toolkit to fit into their work?"].forEach(function (q) {
+  ["Do patients and families find the reflection materials useful?",
+   "Does the optional synthesis process help participants put their priorities into words?",
+   "Do clinicians find the resulting map useful and practical within existing care workflows?",
+   "How does the toolkit complement existing serious-illness communication resources?"].forEach(function (q) {
     pq.appendChild(el("div", { "class": "body" }, q));
   });
 
