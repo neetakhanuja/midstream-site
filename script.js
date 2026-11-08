@@ -137,21 +137,28 @@
   });
 
   /* ---------- program ---------- */
-  var weeks = document.getElementById("weeks");
-  [["Session 1", "What the yard meant to him", "came up: feeling valued · social presence · activities", "Someone Needed Me · Daily Meeting Place · One Busy Day", "Before the surgery, who looked after the lawn? What did it mean to you to be the one doing it?", COL.yellow],
-   ["Session 2", "The decision his son made", "came up: agency · age associations", "One Courageous No · A Big Decision · At This Age", "When your son decided to hire the service, were you part of that decision?", COL.amber],
-   ["Session 3", "His knee, and what he can still do", "came up: aging process · self-efficacy", "Changed with Age · I Am Good At · Learned Over Time", "What has the surgery changed about what you can do, and what you expect of yourself?", COL.blue],
-   ["Session 4", "How he feels, and what comes next", "came up: emotions · life satisfaction", "I Was Surprised · It Gave Me Hope · Life Ahead", "Since the surgery, has anything given you hope, even something small?", COL.orange]].forEach(function (w) {
-    var b = el("div", { "class": "box week" });
-    b.appendChild(el("div", { "class": "bar", style: "background: " + w[5] }));
-    b.appendChild(el("div", { style: "font-size: 12px; letter-spacing: 0.14em; color: #6B6259; text-transform: uppercase" }, w[0]));
-    b.appendChild(el("div", { "class": "serif", style: "font-size: 25px; line-height: 1.2" }, w[1]));
-    b.appendChild(el("div", { style: "font-size: 14px; color: #6B6259" }, w[2]));
-    b.appendChild(el("div", { style: "border-top: 1px solid #EDE6DC; padding-top: 12px; font-size: 14px; font-weight: 600" }, "about 30 minutes · 7–8 questions"));
-    b.appendChild(el("div", { style: "font-size: 13px; color: #6B6259" }, "cards: " + w[3]));
-    b.appendChild(el("div", { style: "font-size: 12px; letter-spacing: 0.1em; color: #8A7E72; text-transform: uppercase; margin-top: 4px" }, "one of the questions"));
-    b.appendChild(el("div", { "class": "serif", style: "font-size: 18px; line-height: 1.4; font-style: italic" }, "“" + w[4] + "”"));
-    weeks.appendChild(b);
+  var gridBody = document.querySelector("#grid tbody");
+  [["feeling valued", COL.pink, ["f", "", "", "r"]],
+   ["social presence", COL.yellow, ["f", "", "", ""]],
+   ["activities", COL.green, ["f", "r", "", ""]],
+   ["agency", COL.amber, ["", "f", "", "r"]],
+   ["age associations", COL.purple, ["", "f", "", ""]],
+   ["aging process", COL.blue, ["", "", "f", ""]],
+   ["self-efficacy", COL.green, ["", "f", "r", ""]],
+   ["emotions", COL.orange, ["f", "", "", "r"]],
+   ["life satisfaction", COL.olive, ["", "", "", "f"]]].forEach(function (a) {
+    var tr = el("tr");
+    var th = el("td");
+    th.appendChild(el("span", { "class": "sw", style: "background: " + a[1] }));
+    th.appendChild(document.createTextNode(a[0]));
+    tr.appendChild(th);
+    a[2].forEach(function (m, i) {
+      var td = el("td");
+      if (m === "f") { td.appendChild(el("span", { "class": "mark", style: "background: " + a[1] + "; border-color: " + a[1], "aria-label": "first comes up in session " + (i + 1) })); }
+      if (m === "r") { td.appendChild(el("span", { "class": "mark", style: "border-color: " + a[1], "aria-label": "comes back in session " + (i + 1) })); }
+      tr.appendChild(td);
+    });
+    gridBody.appendChild(tr);
   });
 
   var convo = document.getElementById("convo");

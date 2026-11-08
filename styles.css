@@ -99,3 +99,11 @@ nav.tabs .btn { margin-left: 12px; min-height: 42px; font-size: 15px; }
 
 footer.site { border-top: 1px solid #E2D9CC; }
 footer.site .wrap { padding-top: 28px; padding-bottom: 28px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: 13px; color: var(--faint); }
+
+.grid { border-collapse: collapse; width: 100%; min-width: 560px; }
+.grid th { font-weight: 600; font-size: 14px; text-align: center; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+.grid th:first-child, .grid td:first-child { text-align: left; }
+.grid td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: center; font-size: 16px; }
+.grid td:first-child { white-space: nowrap; }
+.grid .sw { display: inline-block; width: 12px; height: 12px; margin-right: 10px; vertical-align: -1px; }
+.mark { display: inline-block; width: 18px; height: 18px; border: 2px solid; border-radius: 50%; vertical-align: middle; }

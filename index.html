@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
@@ -117,12 +117,22 @@
   <section class="wrap" style="padding-top: 48px; padding-bottom: 56px">
     <p class="label">The program</p><div class="rule"></div>
     <h1 style="font-size: clamp(36px, 5vw, 50px); max-width: 760px; margin-bottom: 18px">Four weeks to explore what is changing.</h1>
-    <p class="lead" style="margin: 0; max-width: 680px">One conversation a week, by voice or text. Each session lasts about 30 minutes, with seven or eight questions drawn from several cards. The interviewer follows what the person brings up and keeps track of which of the nine parts of life have come up. By the fourth session, it has covered all nine. Each session ends with a small step the person chooses, and nothing is interpreted before then.</p>
+    <p class="lead" style="margin: 0; max-width: 680px">Over four weekly conversations, Midstream explores all nine parts of life. The interviewer starts from what the person brings and follows the threads they open. It keeps track of which parts have come up, and in later sessions it turns to the ones not yet explored. By the end of week 4, all nine have been touched.</p>
   </section>
   <section class="wrap" style="padding-bottom: 72px">
     <p class="label" style="margin-bottom: 16px">One possible path · following Robert</p>
-    <div class="g4" id="weeks"></div>
-    <p class="note" style="margin: 20px 0 0">There is no fixed order. Another person’s four sessions would reach the nine parts in a different sequence, following what they talk about. Session length and number of questions will be tested. A facilitator can join for people who want human support.</p>
+    <div style="overflow-x: auto">
+      <table class="grid" id="grid">
+        <thead><tr><th scope="col"></th><th scope="col">Session 1</th><th scope="col">Session 2</th><th scope="col">Session 3</th><th scope="col">Session 4</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="small" style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 18px; align-items: center">
+      <span><span class="mark first" style="background: #8A7E72; border-color: #8A7E72"></span> first comes up</span>
+      <span><span class="mark" style="border-color: #8A7E72"></span> comes back</span>
+    </div>
+    <p class="body" style="margin: 20px 0 0; max-width: 760px">Robert talks about the same concern in every session: the lawn service, and how it makes him feel. Each conversation follows his words into different parts of his life, and some parts come back more than once. By the end of week 4, all nine have been explored. Another person’s grid would fill in a different order.</p>
+    <p class="note" style="margin: 12px 0 0">A facilitator can join for people who want human support.</p>
   </section>
 
   <section class="section tinted">
@@ -288,6 +298,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>
