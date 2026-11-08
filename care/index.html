@@ -18,14 +18,21 @@
 <body>
 
 <header class="site wrap">
-  <div class="brand" style="cursor: default">Midstream</div>
+  <button type="button" class="brand" data-go="overview">Midstream</button>
   <nav class="tabs" aria-label="Main">
-    <a class="btn" href="mailto:neetakhanuja@gmail.com">Get in touch</a>
+    <button type="button" data-go="overview">Overview</button>
+    <button type="button" data-go="toolkit">The Toolkit</button>
+    <button type="button" data-go="pilot">The Pilot</button>
+    <button type="button" data-go="research">Research</button>
+    <a class="btn" href="#contact" data-go="overview" data-scroll="contact">Get in touch</a>
   </nav>
 </header>
 <svg class="band" id="band" aria-hidden="true" viewBox="0 0 1200 22" preserveAspectRatio="none"></svg>
 
 <main>
+
+<!-- OVERVIEW -->
+<div class="tab" id="tab-overview">
   <section class="wrap" style="padding-top: 56px; padding-bottom: 24px">
     <p class="label">A reflection toolkit · when health changes</p>
     <h1 style="max-width: 900px">When health changes, the hardest moments often happen at home.</h1>
@@ -62,34 +69,82 @@
           </div>
         </div>
       </div>
-      <p class="note" style="margin: 28px 0 0">Elena is an illustrative example, not a patient.</p>
-    </div>
-  </section>
-
-  <section class="section tinted">
-    <div class="wrap">
-      <p class="label">What the toolkit includes</p><div class="rule"></div>
-      <h2 style="margin-bottom: 32px; max-width: 700px">A booklet for home, cards for conversation, and a map to share.</h2>
-      <div class="g3" id="parts"></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="split" style="align-items: center">
-        <div>
-          <p class="label">The reflection booklet</p><div class="rule"></div>
-          <h2 style="margin-bottom: 18px">Tested at home with older adults.</h2>
-          <p class="body" style="margin: 0 0 16px">The toolkit adapts the Aging Reflection Probe, a seven-day booklet we designed and tested with older adults. Each day covers one part of life. Each day starts with a quick check of mood and energy, and every activity offers tick-box options for days when writing is hard.</p>
-          <p class="body" style="margin: 0 0 16px">In our study with 24 older adults in urban India, all 24 returned completed booklets. Participants wrote in the language they preferred, and one participant who could not write after an injury answered with the tick boxes.</p>
-          <p class="note" style="margin: 0">The photo shows the original probe. A version for changing health would be designed with clinicians, patients and families.</p>
-        </div>
-        <img src="../images/probe/kit.jpg" alt="The original probe kit from the study" style="display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto">
+      <div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+        <button type="button" class="btn" data-go="toolkit">See the toolkit →</button>
+        <span class="note">Elena is an illustrative example, not a patient.</span>
       </div>
     </div>
   </section>
 
   <section class="section tinted">
+    <div class="wrap">
+      <p class="label">The toolkit</p><div class="rule"></div>
+      <h2 style="margin-bottom: 32px; max-width: 700px">A booklet for home, cards for conversation, and a map to share.</h2>
+      <div class="g3" id="parts"></div>
+      <button type="button" class="textlink" data-go="toolkit" style="margin-top: 26px">Inside the toolkit →</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items: start">
+      <div>
+        <p class="label">Alongside existing tools</p><div class="rule"></div>
+        <h2 style="margin-bottom: 18px">Earlier, and closer to home.</h2>
+      </div>
+      <div class="body">
+        <p style="margin: 0 0 16px">Tools such as the Go Wish cards and the Serious Illness Conversation Guide help people and clinicians talk about goals of care and end-of-life preferences.</p>
+        <p style="margin: 0">Midstream would work before and alongside those conversations. It focuses on the everyday changes in roles, routines and relationships that come with a change in health, and gives people words for them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tinted">
+    <div class="wrap split" style="align-items: start">
+      <div>
+        <p class="label">The pilot</p><div class="rule"></div>
+        <h2 style="margin-bottom: 18px">Built with a care team, then tested at home.</h2>
+        <p class="body" style="margin: 0 0 22px">A proposed six-month pilot: co-design with clinicians and families, a small pilot at home, then a revised toolkit.</p>
+        <button type="button" class="textlink" data-go="pilot">See the pilot →</button>
+      </div>
+      <div>
+        <p class="label">Research foundation</p><div class="rule"></div>
+        <h2 style="margin-bottom: 18px">Based on a booklet tested with older adults.</h2>
+        <p class="body" style="margin: 0 0 22px">The toolkit builds on research on how people see themselves as they age, and on a reflection booklet that all 24 participants in our study completed.</p>
+        <button type="button" class="textlink" data-go="research">Explore the research →</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div style="max-width: 720px; margin: 0 auto; padding: 72px 24px; text-align: center">
+      <h2 style="font-size: 36px; margin-bottom: 12px">Help shape the toolkit.</h2>
+      <p class="body" style="margin: 0">If you care for people facing a change in health, or are going through one yourself, we would like to hear from you. Write to <a href="mailto:neetakhanuja@gmail.com">neetakhanuja@gmail.com</a>.</p>
+    </div>
+  </section>
+</div>
+
+<!-- TOOLKIT -->
+<div class="tab" id="tab-toolkit" hidden>
+  <section class="wrap" style="padding-top: 48px; padding-bottom: 56px">
+    <p class="label">The toolkit</p><div class="rule"></div>
+    <h1 style="font-size: clamp(36px, 5vw, 50px); max-width: 760px; margin-bottom: 18px">Three materials, used at the person’s own pace.</h1>
+    <p class="lead" style="margin: 0; max-width: 680px">A booklet to complete at home, cards to start conversations with family or a care team, and a one-page map in the person’s own words.</p>
+  </section>
+
+  <section class="section tinted">
+    <div class="wrap split" style="align-items: center">
+      <div>
+        <p class="label">The reflection booklet</p><div class="rule"></div>
+        <h2 style="margin-bottom: 18px">Tested at home with older adults.</h2>
+        <p class="body" style="margin: 0 0 16px">The toolkit adapts the Aging Reflection Probe, a seven-day booklet we designed and tested with older adults. Each day covers one part of life. Each day starts with a quick check of mood and energy, and every activity offers tick-box options for days when writing is hard.</p>
+        <p class="body" style="margin: 0 0 16px">In our study with 24 older adults in urban India, all 24 returned completed booklets. Participants wrote in the language they preferred, and one participant who could not write after an injury answered with the tick boxes.</p>
+        <p class="note" style="margin: 0">The photo shows the original probe. A version for changing health would be designed with clinicians, patients and families.</p>
+      </div>
+      <img src="../images/probe/kit.jpg" alt="The original probe kit from the study" style="display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto">
+    </div>
+  </section>
+
+  <section class="section">
     <div class="wrap">
       <p class="label">The cards</p><div class="rule"></div>
       <div class="split" style="align-items: start; margin-bottom: 40px">
@@ -100,7 +155,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section tinted">
     <div class="wrap split" style="align-items: start">
       <div>
         <p class="label">The map</p><div class="rule"></div>
@@ -125,56 +180,92 @@
     </div>
   </section>
 
-  <section class="section tinted">
-    <div class="wrap split" style="align-items: start">
-      <div>
-        <p class="label">Alongside existing tools</p><div class="rule"></div>
-        <h2 style="margin-bottom: 18px">Earlier, and closer to home.</h2>
-      </div>
-      <div class="body">
-        <p style="margin: 0 0 16px">Tools such as the Go Wish cards and the Serious Illness Conversation Guide help people and clinicians talk about goals of care and end-of-life preferences.</p>
-        <p style="margin: 0">Midstream would work before and alongside those conversations. It focuses on the everyday changes in roles, routines and relationships that come with a change in health, and gives people words for them.</p>
-      </div>
-    </div>
-  </section>
-
   <section class="section">
     <div class="wrap">
       <p class="label">Designed with care</p><div class="rule"></div>
       <h2 style="margin-bottom: 28px">How the toolkit treats people.</h2>
       <div class="g3" style="gap: 16px 28px" id="commitments"></div>
+      <div style="margin-top: 48px"><button type="button" class="textlink" data-go="pilot">Next: the pilot →</button></div>
     </div>
+  </section>
+</div>
+
+<!-- PILOT -->
+<div class="tab" id="tab-pilot" hidden>
+  <section class="wrap" style="padding-top: 48px; padding-bottom: 56px">
+    <p class="label">A proposed six-month pilot</p><div class="rule"></div>
+    <h1 style="font-size: clamp(36px, 5vw, 50px); max-width: 760px; margin-bottom: 18px">Built with a care team, then tested at home.</h1>
+    <p class="lead" style="margin: 0; max-width: 680px">The toolkit would be designed together with clinicians, patients and families, then used at home by a small number of families between visits.</p>
+  </section>
+
+  <section class="wrap" style="padding-bottom: 72px">
+    <div class="g3" id="phases"></div>
+    <p class="note" style="margin: 24px 0 0">A proposal for discussion. The plan would follow the care team’s guidance and ethics review.</p>
   </section>
 
   <section class="section tinted">
-    <div class="wrap">
-      <p class="label">A proposed six-month pilot</p><div class="rule"></div>
-      <h2 style="margin-bottom: 32px; max-width: 700px">Built with a care team, then tested at home.</h2>
-      <div class="g3" id="phases"></div>
-      <p class="note" style="margin: 24px 0 0">A proposal for discussion. The plan would follow the care team’s guidance and ethics review.</p>
+    <div class="wrap split" style="align-items: start">
+      <div>
+        <p class="label">What the pilot would show</p><div class="rule"></div>
+        <h2 style="margin-bottom: 18px">Questions to answer together.</h2>
+      </div>
+      <div class="rows" id="pilot-questions"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap" style="max-width: 720px; text-align: center">
+      <h2 style="font-size: 36px; margin-bottom: 12px">Interested in working together?</h2>
+      <p class="body" style="margin: 0 0 24px">We are looking for clinicians, social workers, chaplains and family caregivers who would like to shape the toolkit.</p>
+      <a class="btn" href="mailto:neetakhanuja@gmail.com">Write to neetakhanuja@gmail.com</a>
+      <div style="margin-top: 32px"><button type="button" class="textlink" data-go="research">Next: the research →</button></div>
+    </div>
+  </section>
+</div>
+
+<!-- RESEARCH -->
+<div class="tab" id="tab-research" hidden>
+  <section class="wrap split" style="align-items: start; padding-top: 48px; padding-bottom: 64px">
+    <div>
+      <p class="label">Research</p><div class="rule"></div>
+      <h1 style="font-size: clamp(36px, 5vw, 50px); margin-bottom: 18px">Nine parts of how we see ourselves.</h1>
+      <p class="lead" style="margin: 0 0 16px">How people see their own aging is linked to their physical, emotional and cognitive wellbeing. These views take shape during changes in life, including changes in health.</p>
+      <p class="body" style="margin: 0">Research on self-perceptions of aging describes nine aspects. The toolkit uses all nine, described in plain language, so a conversation can reach the parts of life a change touches, even when the person does not name them.</p>
+    </div>
+    <div style="border-top: 1px solid #E2D9CC" id="aspects"></div>
+  </section>
+
+  <section class="section tinted">
+    <div class="wrap split" style="align-items: start">
+      <div>
+        <p class="label">Earlier work</p><div class="rule"></div>
+        <h2 style="margin-bottom: 18px">A probe people completed at home.</h2>
+        <p class="body" style="margin: 0 0 16px">The Aging Reflection Probe was a seven-day booklet used with 24 older adults across four living contexts in urban India. All 24 returned completed booklets and took part in follow-up interviews.</p>
+        <p class="body" style="margin: 0">The study suggests that a printed booklet, flexible ways to answer, and a choice of language made it easier for people to take part.</p>
+      </div>
+      <div class="body">
+        <p class="label">Publication</p><div class="rule"></div>
+        <p style="margin: 0 0 16px; font-size: 16px">Khanuja, N., Nisi, V. and Forlizzi, J. Designing Aging Reflection Probes to Elicit Self-Perception of Aging (SPA) Beliefs of Older Adults in India. ACM DIS 2025. <a href="https://doi.org/10.1145/3715336.3735430">doi.org/10.1145/3715336.3735430</a></p>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap split" style="align-items: start">
       <div>
-        <p class="label">Research foundation</p><div class="rule"></div>
-        <h2 style="margin-bottom: 18px">Based on research on how people see themselves as they age.</h2>
-        <p class="body" style="margin: 0">How people see their own aging is linked to their physical, emotional and cognitive wellbeing. The nine parts of life in the toolkit come from this research on self-perceptions of aging, and from design research with older adults.</p>
+        <p class="label">Limits</p><div class="rule"></div>
+        <h2 style="font-size: 36px; margin-bottom: 18px">What still needs testing.</h2>
+        <p class="body" style="margin: 0 0 16px">The nine aspects come from aging research. Whether the toolkit helps people living with a change in health, and how it fits with clinical care, still needs testing. The pilot is the first step.</p>
+        <p class="body" style="margin: 0">The toolkit organizes reflection and conversation. It is not a clinical or diagnostic instrument.</p>
       </div>
       <div class="body">
-        <p style="margin: 0 0 16px; font-size: 16px">Khanuja, N., Nisi, V. and Forlizzi, J. Designing Aging Reflection Probes to Elicit Self-Perception of Aging (SPA) Beliefs of Older Adults in India. ACM DIS 2025. <a href="https://doi.org/10.1145/3715336.3735430">doi.org/10.1145/3715336.3735430</a></p>
+        <p class="label">Who is behind this</p><div class="rule"></div>
         <p style="margin: 0; font-size: 16px">Developed by Neeta Khanuja, designer and HCI researcher · <a href="https://www.neetakhanuja.com">neetakhanuja.com</a></p>
       </div>
     </div>
   </section>
+</div>
 
-  <section class="tinted">
-    <div style="max-width: 720px; margin: 0 auto; padding: 72px 24px; text-align: center">
-      <h2 style="font-size: 36px; margin-bottom: 12px">Help shape the toolkit.</h2>
-      <p class="body" style="margin: 0">If you care for people facing a change in health, or are going through one yourself, we would like to hear from you. Write to <a href="mailto:neetakhanuja@gmail.com">neetakhanuja@gmail.com</a>.</p>
-    </div>
-  </section>
 </main>
 
 <footer class="site">
@@ -184,6 +275,6 @@
   </div>
 </footer>
 
-<script src="care.js?v=1"></script>
+<script src="care.js?v=2"></script>
 </body>
 </html>

@@ -9,6 +9,31 @@
     return n;
   }
 
+  /* ---------- tabs ---------- */
+  var TABS = ["overview", "toolkit", "pilot", "research"];
+  function show(tab, scrollId) {
+    if (TABS.indexOf(tab) === -1) { tab = "overview"; }
+    TABS.forEach(function (t) { document.getElementById("tab-" + t).hidden = t !== tab; });
+    document.querySelectorAll("nav.tabs button[data-go]").forEach(function (b) {
+      if (b.getAttribute("data-go") === tab) { b.setAttribute("aria-current", "page"); } else { b.removeAttribute("aria-current"); }
+    });
+    if (scrollId) {
+      var target = document.getElementById(scrollId);
+      if (target) { target.scrollIntoView(); }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-go]");
+    if (!t) { return; }
+    e.preventDefault();
+    var tab = t.getAttribute("data-go");
+    if (location.hash !== "#" + tab) { history.pushState(null, "", "#" + tab); }
+    show(tab, t.getAttribute("data-scroll"));
+  });
+  window.addEventListener("popstate", function () { show(location.hash.slice(1)); });
+
   var CUR = [
     { id: "valued", name: "feeling valued", col: COL.pink, card: "Someone Needed Me", story: "In Elena’s story: for most of her life she looked after everyone. Now others look after her.", q: "Who still comes to you for advice or help? What do they ask you about?", hot: true },
     { id: "agency", name: "agency", col: COL.amber, card: "One Courageous No", story: "In Elena’s story: small decisions at home, like how her room is arranged, are now made for her.", q: "Which things at home would you like to keep deciding yourself?", hot: true },
@@ -135,4 +160,32 @@
     d.appendChild(el("div", { style: "font-size: 15px; color: #4A433C; line-height: 1.55" }, p[2]));
     phases.appendChild(d);
   });
+
+  var aspects = document.getElementById("aspects");
+  [["feeling valued", "Feeling needed and appreciated", COL.pink],
+   ["agency", "Making decisions and having control", COL.amber],
+   ["social presence", "Belonging and connection with people", COL.yellow],
+   ["self-efficacy", "Confidence in what one can do", COL.green],
+   ["activities", "Daily rhythms and routines", COL.green],
+   ["changes in the body", "What the body and mind can do now", COL.blue],
+   ["how others see me", "What others expect, and what I expect of myself", COL.purple],
+   ["life satisfaction", "How one feels about life and its direction", COL.olive],
+   ["emotions", "Feelings that shape experience", COL.orange]].forEach(function (a) {
+    var r = el("div", { "class": "aspect-row" });
+    r.appendChild(el("div", { "class": "sq", style: "background: " + a[2] }));
+    r.appendChild(el("div", { "class": "n" }, a[0]));
+    r.appendChild(el("div", { "class": "l" }, a[1]));
+    aspects.appendChild(r);
+  });
+
+  var pq = document.getElementById("pilot-questions");
+  ["Do patients and families use the booklet at home, and on which days?",
+   "Which parts of life come up most often after a change in health?",
+   "Does the map help families and care teams understand what matters to the person?",
+   "Which cards and prompts need rewording for this setting?",
+   "What would clinicians need for the toolkit to fit into their work?"].forEach(function (q) {
+    pq.appendChild(el("div", { "class": "body" }, q));
+  });
+
+  show(location.hash.slice(1) || "overview");
 })();
