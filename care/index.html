@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Midstream · when health changes</title>
+<meta name="description" content="A reflection toolkit for people navigating a serious or changing health situation, their families, and the clinicians who care for them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=7">
+<style>
+  .probe-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .probe-strip figure { margin: 0; }
+  .probe-strip img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+  .probe-strip figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); }
+  .phase { border-top: 2px solid var(--ink); padding-top: 16px; }
+  .phase .when { font-size: 12px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
+  @media (max-width: 640px) { .probe-strip { grid-template-columns: minmax(0, 1fr); } }
+</style>
+</head>
+<body>
+
+<header class="site wrap">
+  <div class="brand" style="cursor: default">Midstream</div>
+  <nav class="tabs" aria-label="Main">
+    <a class="btn" href="mailto:neetakhanuja@gmail.com">Get in touch</a>
+  </nav>
+</header>
+<svg class="band" id="band" aria-hidden="true" viewBox="0 0 1200 22" preserveAspectRatio="none"></svg>
+
+<main>
+  <section class="wrap" style="padding-top: 56px; padding-bottom: 24px">
+    <p class="label">A reflection toolkit · when health changes</p>
+    <h1 style="max-width: 900px">When health changes, the hardest moments often happen at home.</h1>
+    <p class="lead" style="margin: 28px 0 0; max-width: 680px">Midstream is a reflection toolkit for people navigating a serious or changing health situation, their families, and the clinicians who care for them. It helps people put into words what a change is touching in their lives.</p>
+  </section>
+
+  <section aria-label="Elena's complaint and the nine currents underneath it" style="padding-top: 24px">
+    <div class="river">
+      <div class="wrap" style="position: relative; z-index: 2; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px">
+        <div class="quote" style="font-size: clamp(30px, 4.5vw, 44px); line-height: 1">“That’s not how I like my pillows.”</div>
+        <div class="small" style="font-size: 14px; padding-bottom: 6px">Elena, 71, to her daughter, who moved in to help at home</div>
+      </div>
+      <svg id="river" aria-hidden="true" viewBox="0 0 1200 300" preserveAspectRatio="none"></svg>
+      <div class="tag" style="top: 70px">SURFACE</div>
+      <div class="tag" style="bottom: 6px">UNDERNEATH</div>
+    </div>
+
+    <div class="wrap" style="padding-top: 28px; padding-bottom: 72px">
+      <p style="margin: 0 0 14px; font-size: 16px" class="body">Nine currents can run under one small moment. Choose one to see the card behind it, and the question it becomes for Elena.</p>
+      <div class="chips" id="chips"></div>
+      <div class="split" style="align-items: stretch; gap: 40px">
+        <div class="body">
+          <p style="margin: 0 0 16px">Since her health changed, Elena’s daughter has moved in to help. Elena keeps correcting how her pillows are arranged, and sends help away. Her daughter hears a complaint about pillows.</p>
+          <p style="margin: 0 0 16px">For most of her life, Elena looked after everyone else. Being the one who cares for the family may be part of how she knows who she is.</p>
+          <p style="margin: 0">Families and care teams usually see the surface. The toolkit helps people find and name what is underneath, at their own pace and in their own words.</p>
+        </div>
+        <div class="panel" aria-live="polite">
+          <div class="bandtop" id="sel-band"></div>
+          <div class="in">
+            <div class="head"><span id="sel-name"></span><span id="sel-card"></span></div>
+            <div id="sel-story" style="font-size: 16px" class="body"></div>
+            <div class="small" style="border-top: 1px solid var(--line); padding-top: 14px">a family member or clinician might ask</div>
+            <div class="q" id="sel-q"></div>
+          </div>
+        </div>
+      </div>
+      <p class="note" style="margin: 28px 0 0">Elena is an illustrative example, not a patient.</p>
+    </div>
+  </section>
+
+  <section class="section tinted">
+    <div class="wrap">
+      <p class="label">What the toolkit includes</p><div class="rule"></div>
+      <h2 style="margin-bottom: 32px; max-width: 700px">A booklet for home, cards for conversation, and a map to share.</h2>
+      <div class="g3" id="parts"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="label">The reflection booklet</p><div class="rule"></div>
+      <div class="split" style="align-items: start; margin-bottom: 40px">
+        <h2>Built on a booklet that people finished.</h2>
+        <div class="body">
+          <p style="margin: 0 0 16px">The toolkit adapts the Aging Reflection Probe, a seven-day booklet we designed and tested with older adults. Each day covers one part of life. Each day starts with a quick check of mood and energy, and every activity offers tick-box options for days when writing is hard.</p>
+          <p style="margin: 0">In our study with 24 older adults in urban India, all 24 returned completed booklets. Participants wrote in the language they preferred, and one participant who could not write after an injury answered with the tick boxes.</p>
+        </div>
+      </div>
+      <div class="probe-strip">
+        <figure><img src="../images/probe/age.jpg" alt="Booklet page: choose an age you would go back to, and say why"><figcaption>Day 3 · an age you would go back to, and why</figcaption></figure>
+        <figure><img src="../images/probe/decisions.jpg" alt="Booklet page: who do you consult for day-to-day, financial, social and health decisions"><figcaption>Day 6 · which decisions you make yourself, and which you share</figcaption></figure>
+        <figure><img src="../images/probe/connections.jpg" alt="Booklet page: map of social connections at different ages"><figcaption>Day 1 · the people around you, then and now</figcaption></figure>
+        <figure><img src="../images/probe/wishes.jpg" alt="Booklet page: emotion check, and three wishes"><figcaption>Day 4 · how you feel about life now, and three wishes</figcaption></figure>
+      </div>
+      <p class="note" style="margin: 16px 0 0">Pages from the original booklet. The version for changing health would be rewritten with clinicians, patients and families.</p>
+    </div>
+  </section>
+
+  <section class="section tinted">
+    <div class="wrap">
+      <p class="label">The cards</p><div class="rule"></div>
+      <div class="split" style="align-items: start; margin-bottom: 40px">
+        <h2>One card, one part of life.</h2>
+        <p class="body" style="margin: 0">Each card opens one of nine parts of life, such as feeling valued, making decisions, or changes in the body. A family member, a clinician or the person themselves can use a card to start a conversation from a small, everyday moment.</p>
+      </div>
+      <div class="g3" id="card-examples"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items: start">
+      <div>
+        <p class="label">The map</p><div class="rule"></div>
+        <h2 style="margin-bottom: 18px">What matters, in the person’s own words.</h2>
+        <p class="body" style="margin: 0 0 16px">At the end, the person fills in a one-page map: the parts of life the change is touching, what matters most to them now, and what they want their family and care team to know.</p>
+        <p class="body" style="margin: 0">They decide whether to share it, and with whom. They can bring it to an appointment.</p>
+      </div>
+      <div class="box" style="padding: 32px">
+        <div style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 12px; letter-spacing: 0.12em; color: var(--muted)"><span>MAP · EXAMPLE</span><span>Elena</span></div>
+        <div class="serif" style="margin: 16px 0 20px; font-size: 27px; line-height: 1.2">Still the one who looks after this family</div>
+        <div style="font-size: 12px; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 10px">PARTS OF LIFE THIS TOUCHES</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px" id="map-tags"></div>
+        <div style="border-top: 1px solid var(--line); padding-top: 14px; margin-bottom: 14px">
+          <div style="font-size: 12px; letter-spacing: 0.12em; color: var(--muted)">WHAT MATTERS MOST NOW</div>
+          <div class="serif" style="margin-top: 4px; font-size: 19px">Deciding how my home is run, and being asked before things change.</div>
+        </div>
+        <div style="border-top: 1px solid var(--line); padding-top: 14px">
+          <div style="font-size: 12px; letter-spacing: 0.12em; color: var(--muted)">WHAT I WANT MY CARE TEAM TO KNOW</div>
+          <div class="serif" style="margin-top: 4px; font-size: 19px">I would rather do less and do it myself than have everything done for me.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tinted">
+    <div class="wrap split" style="align-items: start">
+      <div>
+        <p class="label">Alongside existing tools</p><div class="rule"></div>
+        <h2 style="margin-bottom: 18px">Earlier, and closer to home.</h2>
+      </div>
+      <div class="body">
+        <p style="margin: 0 0 16px">Tools such as the Go Wish cards and the Serious Illness Conversation Guide help people and clinicians talk about goals of care and end-of-life preferences.</p>
+        <p style="margin: 0">Midstream would work before and alongside those conversations. It focuses on the everyday changes in roles, routines and relationships that come with a change in health, and gives people words for them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="label">Designed with care</p><div class="rule"></div>
+      <h2 style="margin-bottom: 28px">How the toolkit treats people.</h2>
+      <div class="g3" style="gap: 16px 28px" id="commitments"></div>
+    </div>
+  </section>
+
+  <section class="section tinted">
+    <div class="wrap">
+      <p class="label">A proposed six-month pilot</p><div class="rule"></div>
+      <h2 style="margin-bottom: 32px; max-width: 700px">Built with a care team, then tested at home.</h2>
+      <div class="g3" id="phases"></div>
+      <p class="note" style="margin: 24px 0 0">A proposal for discussion. The plan would follow the care team’s guidance and ethics review.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items: start">
+      <div>
+        <p class="label">Research foundation</p><div class="rule"></div>
+        <h2 style="margin-bottom: 18px">Based on research on how people see themselves as they age.</h2>
+        <p class="body" style="margin: 0">How people see their own aging is linked to their physical, emotional and cognitive wellbeing. The nine parts of life in the toolkit come from this research on self-perceptions of aging, and from design research with older adults.</p>
+      </div>
+      <div class="body">
+        <p style="margin: 0 0 16px; font-size: 16px">Khanuja, N., Nisi, V. and Forlizzi, J. Designing Aging Reflection Probes to Elicit Self-Perception of Aging (SPA) Beliefs of Older Adults in India. ACM DIS 2025. <a href="https://doi.org/10.1145/3715336.3735430">doi.org/10.1145/3715336.3735430</a></p>
+        <p style="margin: 0; font-size: 16px">Developed by Neeta Khanuja, designer and HCI researcher · <a href="https://www.neetakhanuja.com">neetakhanuja.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tinted">
+    <div style="max-width: 720px; margin: 0 auto; padding: 72px 24px; text-align: center">
+      <h2 style="font-size: 36px; margin-bottom: 12px">Help shape the toolkit.</h2>
+      <p class="body" style="margin: 0">If you care for people facing a change in health, or are going through one yourself, we would like to hear from you. Write to <a href="mailto:neetakhanuja@gmail.com">neetakhanuja@gmail.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>Midstream · a proposal in development · 2026</div>
+    <div>A reflection toolkit. It is not a clinical assessment and does not replace medical or psychological care.</div>
+  </div>
+</footer>
+
+<script src="care.js?v=1"></script>
+</body>
+</html>
