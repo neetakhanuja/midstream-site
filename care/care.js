@@ -183,13 +183,11 @@
    ["2", "Draft", "A trained facilitator drafts a short synthesis of the themes."],
    ["3", "Review", "The person reviews, revises and approves the summary."],
    ["4", "Choose", "The person decides whether to share it, and with whom."]].forEach(function (r) {
-    var row = el("div", { style: "display: flex; gap: 16px; align-items: flex-start" });
-    row.appendChild(el("div", { "class": "dot", style: "border-radius: 17px; background: #F6F5F2; border: 1px solid #D9CEBF" }, r[0]));
-    var t = el("div");
-    t.appendChild(el("div", { style: "font-weight: 600" }, r[1]));
-    t.appendChild(el("div", { style: "font-size: 15px; color: #6B6259" }, r[2]));
-    row.appendChild(t);
-    syn.appendChild(row);
+    var b = el("div", { "class": "box", style: "display: flex; flex-direction: column; gap: 10px" });
+    b.appendChild(el("div", { "class": "dot", style: "border-radius: 17px; background: #F6F5F2; border: 1px solid #D9CEBF" }, r[0]));
+    b.appendChild(el("div", { "class": "serif", style: "font-size: 23px" }, r[1]));
+    b.appendChild(el("div", { style: "font-size: 15px; color: #4A433C; line-height: 1.55" }, r[2]));
+    syn.appendChild(b);
   });
 
   var pq = document.getElementById("pilot-questions");
