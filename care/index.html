@@ -11,9 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=7">
 <style>
-  .probe-photos { display: flex; gap: 16px; align-items: stretch; }
-  .probe-photos img { display: block; height: 320px; width: auto; min-width: 0; flex: 0 0 auto; }
-  @media (max-width: 760px) { .probe-photos { flex-direction: column; } .probe-photos img { height: auto; width: 100%; } }
   .phase { border-top: 2px solid var(--ink); padding-top: 16px; }
   .phase .when { font-size: 12px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
 </style>
@@ -79,20 +76,16 @@
 
   <section class="section">
     <div class="wrap">
-      <p class="label">The reflection booklet</p><div class="rule"></div>
-      <div class="split" style="align-items: start; margin-bottom: 40px">
-        <h2>Built on a booklet that people finished.</h2>
-        <div class="body">
-          <p style="margin: 0 0 16px">The toolkit adapts the Aging Reflection Probe, a seven-day booklet we designed and tested with older adults. Each day covers one part of life. Each day starts with a quick check of mood and energy, and every activity offers tick-box options for days when writing is hard.</p>
-          <p style="margin: 0">In our study with 24 older adults in urban India, all 24 returned completed booklets. Participants wrote in the language they preferred, and one participant who could not write after an injury answered with the tick boxes.</p>
+      <div class="split" style="align-items: center">
+        <div>
+          <p class="label">The reflection booklet</p><div class="rule"></div>
+          <h2 style="margin-bottom: 18px">Tested at home with older adults.</h2>
+          <p class="body" style="margin: 0 0 16px">The toolkit adapts the Aging Reflection Probe, a seven-day booklet we designed and tested with older adults. Each day covers one part of life. Each day starts with a quick check of mood and energy, and every activity offers tick-box options for days when writing is hard.</p>
+          <p class="body" style="margin: 0 0 16px">In our study with 24 older adults in urban India, all 24 returned completed booklets. Participants wrote in the language they preferred, and one participant who could not write after an injury answered with the tick boxes.</p>
+          <p class="note" style="margin: 0">The photo shows the original probe. A version for changing health would be designed with clinicians, patients and families.</p>
         </div>
+        <img src="../images/probe/kit.jpg" alt="The original probe kit from the study" style="display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto">
       </div>
-      <div class="probe-photos">
-        <img src="../images/probe/kit.jpg" alt="The original probe kit from the study">
-        <img src="../images/probe/booklet-open.jpg" alt="The booklet held open at an illustrated page">
-        <img src="../images/probe/booklet-hand.jpg" alt="A hand holding the booklet">
-      </div>
-      <p class="note" style="margin: 16px 0 0">Photos of the original probe from our study. A version for changing health would be designed with clinicians, patients and families.</p>
     </div>
   </section>
 
