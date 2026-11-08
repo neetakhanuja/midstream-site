@@ -10,7 +10,7 @@
   }
 
   /* ---------- tabs ---------- */
-  var TABS = ["overview", "program", "model", "research"];
+  var TABS = ["overview", "program", "offerings", "research"];
   function show(tab, scrollId) {
     if (TABS.indexOf(tab) === -1) { tab = "overview"; }
     TABS.forEach(function (t) { document.getElementById("tab-" + t).hidden = t !== tab; });
@@ -111,10 +111,10 @@
 
   /* ---------- overview previews ---------- */
   var wp = document.getElementById("week-preview");
-  [["1", "Starts from the person’s own words", "whatever they bring to the first session", COL.yellow],
-   ["2", "Follows what comes up", "each question opens a different part of life", COL.amber],
-   ["3", "Keeps track of all nine", "and returns to the parts not yet explored", COL.blue],
-   ["4", "Ends each week with a step", "chosen by the person, or a decision to pause", COL.orange]].forEach(function (w) {
+  [["1", "Starts from each person’s situation", "whatever they bring to the first session", COL.yellow],
+   ["2", "Follows what comes up", "each card opens a different part of life", COL.amber],
+   ["3", "Covers all nine parts", "the facilitator returns to the ones not yet discussed", COL.blue],
+   ["4", "Ends with a transition map", "and a next step each person chooses", COL.orange]].forEach(function (w) {
     var row = el("div", { style: "display: flex; gap: 14px; align-items: flex-start" });
     row.appendChild(el("div", { "class": "dot", style: "background: " + w[3] }, w[0]));
     var t = el("div");
@@ -124,17 +124,23 @@
     wp.appendChild(row);
   });
 
-  var flow = document.getElementById("flow");
-  [["Interviewer", "Asks card-based questions across four weekly sessions.", false],
-   ["Analyzer", "Finds tentative patterns across everything the person said.", false],
-   ["The person reviews", "Confirms, edits or rejects each pattern.", true],
-   ["Recommender", "Offers options, tradeoffs and checked resources.", false]].forEach(function (f, i, arr) {
-    var b = el("div", { "class": "box" + (f[2] ? " hl" : "") });
-    b.appendChild(el("div", { style: "font-weight: 600; font-size: 17px" }, f[0]));
-    b.appendChild(el("div", { style: "font-size: 15px; color: #4A433C; margin-top: 4px" }, f[1]));
-    flow.appendChild(b);
-    if (i < arr.length - 1) { flow.appendChild(el("div", { "class": "arrow", "aria-hidden": "true" }, "→")); }
-  });
+  var OFFERS = [
+    ["Workshop", "One 90-minute session", "A small group, a first look at the cards, and at what a change is touching in each person’s life.", COL.yellow],
+    ["Midstream program", "Four sessions", "The full program in a small group. All nine parts of life, and a transition map to keep.", COL.amber],
+    ["One-to-one", "Individual sessions", "The same approach with a facilitator, for people who prefer to talk privately.", COL.blue]
+  ];
+  function offerBox(o, full) {
+    var b = el("div", { "class": "box", style: "padding: 0; overflow: hidden; display: flex; flex-direction: column" });
+    b.appendChild(el("div", { style: "height: 12px; background: " + o[3] }));
+    var inner = el("div", { style: "padding: " + (full ? "28px" : "22px") + "; display: flex; flex-direction: column; gap: 6px" });
+    inner.appendChild(el("div", { style: "font-size: 12px; letter-spacing: 0.12em; color: #6B6259; text-transform: uppercase" }, o[1]));
+    inner.appendChild(el("div", { "class": "serif", style: "font-size: " + (full ? "28px" : "24px") + "; line-height: 1.2" }, o[0]));
+    inner.appendChild(el("div", { style: "font-size: 15px; color: #4A433C; line-height: 1.55; margin-top: 4px" }, o[2]));
+    b.appendChild(inner);
+    return b;
+  }
+  var op = document.getElementById("offer-preview");
+  OFFERS.forEach(function (o) { op.appendChild(offerBox(o, false)); });
 
   /* ---------- program ---------- */
   var gridBody = document.querySelector("#grid tbody");
@@ -161,28 +167,18 @@
     gridBody.appendChild(tr);
   });
 
-  var convo = document.getElementById("convo");
-  [[null, "Interviewer · opening", "What brings you here this week?"],
-   ["r", "My son hired a lawn service while I was recovering. They cut it all wrong, and nobody listens."],
-   [COL.pink, "Interviewer · card: Someone Needed Me", "Before the surgery, who looked after the lawn? What did it mean to you to be the one doing it?"],
-   ["r", "Me, for forty years. People on the street asked me for advice."],
-   [COL.yellow, "Interviewer · card: Daily Meeting Place", "You said people asked you for advice. Where would that happen?"],
-   ["r", "Out front, mostly. Or at the hardware store on Saturdays. I haven’t been since the surgery."],
-   [COL.green, "Interviewer · card: One Busy Day", "Now that someone else does the yard, what fills your Saturdays?"],
-   ["r", "Not much. I watch them do it wrong."],
-   [null, "Interviewer · closing", "We will stop here for this week. Is there one small thing you would like to try before next time?"],
-   ["r", "Maybe walk down to the hardware store."]].forEach(function (m) {
-    if (m[0] === "r") {
-      var r = el("div", { "class": "reply" });
-      r.appendChild(el("span", { style: "font-weight: 600" }, "Robert"));
-      r.appendChild(document.createTextNode(" · " + m[1]));
-      convo.appendChild(r);
-    } else {
-      var a = el("div", { "class": "ask", style: m[0] ? "border-left-color: " + m[0] : "" });
-      a.appendChild(el("div", { "class": "small", style: "font-size: 12px" }, m[1]));
-      a.appendChild(el("div", { "class": "t" }, m[2]));
-      convo.appendChild(a);
-    }
+  var steps = document.getElementById("session-steps");
+  [["1", "Each person says what is on their mind", "Usually the change that brought them, in their own words."],
+   ["2", "The facilitator brings in a card", "Chosen to fit what was said, from a part of life not yet discussed."],
+   ["3", "Each person answers about their own life", "The group listens and asks. Nobody is told what their story means."],
+   ["4", "Everyone leaves with something to try", "A small step, or a question to think about before the next session."]].forEach(function (r) {
+    var row = el("div", { style: "display: flex; gap: 16px; align-items: flex-start" });
+    row.appendChild(el("div", { "class": "dot", style: "border-radius: 17px; background: #FFF; border: 1px solid #D9CEBF" }, r[0]));
+    var t = el("div");
+    t.appendChild(el("div", { style: "font-weight: 600" }, r[1]));
+    t.appendChild(el("div", { style: "font-size: 15px; color: #6B6259" }, r[2]));
+    row.appendChild(t);
+    steps.appendChild(row);
   });
 
   var NINE = [
@@ -196,53 +192,22 @@
     ["life satisfaction", "How one feels about life and its direction", COL.olive],
     ["emotions", "Feelings that shape experience", COL.orange]
   ];
-  var cov = document.getElementById("coverage");
-  NINE.forEach(function (a, k) {
-    var on = [1, 2, 4].indexOf(k) !== -1;
-    cov.appendChild(el("span", { style: on ? "background: " + a[2] + "; border-color: " + a[2] : "" }));
-  });
-
   var tags = document.getElementById("map-tags");
   [["agency", COL.amber], ["feeling valued", COL.pink], ["aging process", COL.blue], ["social presence", COL.yellow]].forEach(function (t) {
     tags.appendChild(el("span", { "class": "tagpill", style: "background: " + t[1] }, t[0]));
   });
 
-  /* ---------- model ---------- */
-  var agents = document.getElementById("agents");
-  [["1", "Interviewer · weeks 1–4", "Listens and asks", "Asks bounded, card-based questions across the nine aspects, starting from the person’s own words.", false],
-   ["2", "Analyzer", "Finds patterns", "Reads all four sessions for tentative patterns and needs. Every pattern traces back to what the person said.", false],
-   ["3", "The person", "Reviews the reading", "Confirms, edits or rejects each pattern. A rejected pattern is dropped.", true],
-   ["4", "Recommender", "Suggests next steps", "Works only from confirmed patterns. Offers options, tradeoffs, points to raise with someone, and checked resources.", false]].forEach(function (g) {
-    var b = el("div", { "class": "box" + (g[4] ? " hl" : "") });
-    b.appendChild(el("div", { "class": "serif", style: "font-size: 34px; line-height: 1; color: #1E2B33" }, g[0]));
-    b.appendChild(el("div", { style: "margin-top: 12px; font-size: 12px; letter-spacing: 0.12em; color: #6B6259; text-transform: uppercase" }, g[1]));
-    b.appendChild(el("div", { "class": "serif", style: "margin: 4px 0 8px; font-size: 23px" }, g[2]));
-    b.appendChild(el("div", { style: "font-size: 15px; color: #4A433C; line-height: 1.55" }, g[3]));
-    agents.appendChild(b);
-  });
-
-  var contrasts = document.getElementById("contrasts");
-  [["Agree with how you first framed the problem.", "Asks about the parts of life around the concern first."],
-   ["Answer before it understands.", "Covers all nine aspects over four weeks before offering anything."],
-   ["Invent causes and state them as fact.", "Offers a tentative reading that you confirm, edit or reject."],
-   ["Give confident advice.", "Shows options and tradeoffs, with uncertainty visible."],
-   ["Keep the conversation going without end.", "Works in bounded sessions that close with a step you choose."],
-   ["Deepen rumination and dependence.", "Points to people and human help, especially when stakes are high."],
-   ["Assume one cultural default.", "Asks you to describe your own context, and lets you change it."],
-   ["Make up resources and facts.", "Recommends only checked resources, with no paid listings."]].forEach(function (c) {
-    var r = el("div", { "class": "pair" });
-    r.appendChild(el("div", { style: "color: #6B6259" }, c[0]));
-    r.appendChild(el("div", null, c[1]));
-    contrasts.appendChild(r);
-  });
+  /* ---------- offerings ---------- */
+  var offers = document.getElementById("offerings");
+  OFFERS.forEach(function (o) { offers.appendChild(offerBox(o, true)); });
 
   var commitments = document.getElementById("commitments");
-  ["It will not diagnose you or claim to know your hidden motives.",
-   "It will not keep you talking. Sessions have an end.",
-   "It will not decide for you. Every reading can be edited or rejected.",
-   "It will not store what you share without asking. You can delete it.",
-   "It will not sell your data or take money to recommend a service.",
-   "It will point you to people and professional help when a concern is serious."].forEach(function (m) {
+  ["It will not diagnose anyone or guess at hidden motives.",
+   "It will not tell people what their situation means. Each person decides.",
+   "It will not run without an end. Every program has a set number of sessions.",
+   "It will not record or keep what people share without asking.",
+   "It will not replace therapy. Sessions are for reflection.",
+   "It will point people to professional help when a concern is serious."].forEach(function (m) {
     commitments.appendChild(el("div", { style: "border-top: 1px solid #D9CEBF; padding-top: 12px" }, m));
   });
 
@@ -269,10 +234,10 @@
   });
 
   var roadmap = document.getElementById("roadmap");
-  [["1", "Revise the card deck", "Adapt the prompts for the first transition, and add cards for loss, conflict, and the present and future."],
-   ["2", "Build the dataset", "Run a free program for compensated, consenting participants, alongside simulated conversations reviewed by psychologists."],
-   ["3", "Train the agents", "Fine-tune open models as interviewer, analyzer and recommender."],
-   ["4", "Test against general AI", "Compare with a general-purpose chatbot on clarity, agency, relevance, burden and harm."]].forEach(function (r) {
+  [["1", "Revise the card deck", "Adapt the prompts for transitions in midlife and later life, and add cards for loss, conflict, and the present and future."],
+   ["2", "Run free pilot workshops", "Small groups of 6 to 10 people. Ask what they gained and whether they would come back."],
+   ["3", "Refine the facilitation", "Write a facilitator guide from what works in the pilots."],
+   ["4", "Offer the program", "Workshops, the four-session program and one-to-one sessions, directly and through organizations."]].forEach(function (r) {
     var row = el("div", { style: "display: flex; gap: 16px; align-items: flex-start" });
     row.appendChild(el("div", { "class": "dot", style: "border-radius: 17px; background: #F6F5F2" }, r[0]));
     var t = el("div");
