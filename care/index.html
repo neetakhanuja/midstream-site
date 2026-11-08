@@ -11,13 +11,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css?v=7">
 <style>
-  .probe-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-  .probe-strip figure { margin: 0; }
-  .probe-strip img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
-  .probe-strip figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); }
+  .probe-photos { display: flex; gap: 16px; align-items: stretch; }
+  .probe-photos img { display: block; height: 320px; width: auto; min-width: 0; flex: 0 0 auto; }
+  @media (max-width: 760px) { .probe-photos { flex-direction: column; } .probe-photos img { height: auto; width: 100%; } }
   .phase { border-top: 2px solid var(--ink); padding-top: 16px; }
   .phase .when { font-size: 12px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
-  @media (max-width: 640px) { .probe-strip { grid-template-columns: minmax(0, 1fr); } }
 </style>
 </head>
 <body>
@@ -89,13 +87,12 @@
           <p style="margin: 0">In our study with 24 older adults in urban India, all 24 returned completed booklets. Participants wrote in the language they preferred, and one participant who could not write after an injury answered with the tick boxes.</p>
         </div>
       </div>
-      <div class="probe-strip">
-        <figure><img src="../images/probe/age.jpg" alt="Booklet page: choose an age you would go back to, and say why"><figcaption>Day 3 · an age you would go back to, and why</figcaption></figure>
-        <figure><img src="../images/probe/decisions.jpg" alt="Booklet page: who do you consult for day-to-day, financial, social and health decisions"><figcaption>Day 6 · which decisions you make yourself, and which you share</figcaption></figure>
-        <figure><img src="../images/probe/connections.jpg" alt="Booklet page: map of social connections at different ages"><figcaption>Day 1 · the people around you, then and now</figcaption></figure>
-        <figure><img src="../images/probe/wishes.jpg" alt="Booklet page: emotion check, and three wishes"><figcaption>Day 4 · how you feel about life now, and three wishes</figcaption></figure>
+      <div class="probe-photos">
+        <img src="../images/probe/kit.jpg" alt="The original probe kit from the study">
+        <img src="../images/probe/booklet-open.jpg" alt="The booklet held open at an illustrated page">
+        <img src="../images/probe/booklet-hand.jpg" alt="A hand holding the booklet">
       </div>
-      <p class="note" style="margin: 16px 0 0">Pages from the original booklet. The version for changing health would be rewritten with clinicians, patients and families.</p>
+      <p class="note" style="margin: 16px 0 0">Photos of the original probe from our study. A version for changing health would be designed with clinicians, patients and families.</p>
     </div>
   </section>
 
