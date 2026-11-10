@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Midstream — making sense of life transitions</title>
-<meta name="description" content="Midstream offers facilitated reflection sessions for people in midlife and later life who are going through a change, using a research-based card deck.">
+<meta name="description" content="Midstream is a proposed AI-supported reflection system for people going through a major life change: structured conversations over several weeks, interpretations the person reviews, and next steps they choose.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 
@@ -16,10 +16,11 @@
   <button type="button" class="brand" data-go="overview">Midstream</button>
   <nav class="tabs" aria-label="Main">
     <button type="button" data-go="overview">Overview</button>
-    <button type="button" data-go="program">The Program</button>
-    <button type="button" data-go="offerings">Offerings</button>
+    <button type="button" data-go="how">How It Works</button>
+    <button type="button" data-go="model">The Model</button>
     <button type="button" data-go="research">Research</button>
-    <a class="btn" href="#join" data-go="overview" data-scroll="join">Join a pilot</a>
+    <button type="button" data-go="participate">Participate</button>
+    <a class="btn" href="#participate" data-go="participate" data-scroll="contact">Get involved</a>
   </nav>
 </header>
 <svg class="band" id="band" aria-hidden="true" viewBox="0 0 1200 22" preserveAspectRatio="none"></svg>
@@ -30,7 +31,7 @@
 <div class="tab" id="tab-overview">
   <section class="wrap" style="padding-top: 56px; padding-bottom: 24px">
     <h1 style="max-width: 900px">A life change rarely changes one thing.<br><em style="color: #4A5A62">Midstream helps people see what else it touches.</em></h1>
-    <p class="lead" style="margin: 28px 0 0; max-width: 660px">Facilitated reflection sessions for people in midlife and later life who are going through a change: retiring, children leaving home, caring for a parent, a change in health.</p>
+    <p class="lead" style="margin: 28px 0 0; max-width: 660px">A proposed AI-supported reflection system for people going through a major life change. It offers structured conversations over several weeks, interpretations the person reviews, and next steps they choose.</p>
   </section>
 
   <section aria-label="Robert's complaint and the nine currents underneath it" style="padding-top: 24px">
@@ -45,176 +46,252 @@
     </div>
 
     <div class="wrap" style="padding-top: 28px; padding-bottom: 72px">
-      <p style="margin: 0 0 14px; font-size: 16px" class="body">Nine currents run under every concern. Choose one to see the card behind it, and the question it becomes for Robert.</p>
+      <p style="margin: 0 0 14px; font-size: 16px" class="body">Nine currents can run under one concern. Choose one to see the card behind it, and the question it could become for Robert.</p>
       <div class="chips" id="chips"></div>
       <div class="split" style="align-items: stretch; gap: 40px">
         <div class="body">
           <p style="margin: 0 0 16px">After Robert’s knee surgery, his son hired a lawn service. Robert keeps saying they cut it all wrong, and his family hears a complaint about grass.</p>
           <p style="margin: 0 0 16px">For forty years he looked after the house. Fixing things was how he cared for his family, and how he knew he was useful. People often cannot see which part of a change is hurting.</p>
-          <p style="margin: 0">In a Midstream session, a facilitator uses a research-based card deck to ask about each part of life a change can touch. Robert decides which ones matter to him.</p>
+          <p style="margin: 0">Midstream would follow these currents over several conversations, with questions drawn from a research-based card deck. Robert decides what the patterns mean.</p>
         </div>
         <div class="panel" aria-live="polite">
           <div class="bandtop" id="sel-band"></div>
           <div class="in">
             <div class="head"><span id="sel-name"></span><span id="sel-card"></span></div>
             <div id="sel-robert" style="font-size: 16px" class="body"></div>
-            <div class="small" style="border-top: 1px solid var(--line); padding-top: 14px">the facilitator might ask</div>
+            <div class="small" style="border-top: 1px solid var(--line); padding-top: 14px">Midstream might ask</div>
             <div class="q" id="sel-q"></div>
           </div>
         </div>
       </div>
-      <div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
-        <button type="button" class="btn" data-go="program">See the program →</button>
-        <span class="note">An early concept, based on research with older adults. Pilot workshops are being planned.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <p class="label">The program</p><div class="rule"></div>
-      <div class="split" style="align-items: start">
-        <h2>Four sessions. A fuller picture.</h2>
-        <div>
-          <div class="g2" style="gap: 18px 24px" id="week-preview"></div>
-          <button type="button" class="textlink" data-go="program" style="margin-top: 26px">Inside the program →</button>
-        </div>
-      </div>
+      <p class="note" style="margin: 28px 0 0">A proposed system, informed by research with older adults. Not yet built or evaluated.</p>
     </div>
   </section>
 
   <section class="section tinted">
     <div class="wrap">
-      <p class="label">Offerings</p><div class="rule"></div>
-      <h2 style="margin-bottom: 32px; max-width: 620px">Three ways to take part.</h2>
-      <div class="g3" id="offer-preview"></div>
-      <button type="button" class="textlink" data-go="offerings" style="margin-top: 26px">More about the offerings →</button>
+      <p class="label">How someone would use it</p><div class="rule"></div>
+      <h2 style="margin-bottom: 32px; max-width: 680px">From a life change to a personal Transition Map.</h2>
+      <div class="g3" style="gap: 20px" id="journey-preview"></div>
+      <button type="button" class="btn" data-go="how" style="margin-top: 32px">Follow Robert’s journey →</button>
     </div>
   </section>
 
   <section class="section">
+    <div class="wrap">
+      <p class="label">The model</p><div class="rule"></div>
+      <h2 style="margin-bottom: 32px; max-width: 680px">Three AI-supported functions, with the person in control.</h2>
+      <div class="flow" id="flow"></div>
+      <div style="margin-top: 22px; display: flex; flex-wrap: wrap; gap: 18px; align-items: center">
+        <button type="button" class="textlink" data-go="model">How the model works →</button>
+        <span class="note">Planned architecture. Not yet implemented or validated.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tinted">
     <div class="wrap split">
       <div>
         <p class="label">Research foundation</p><div class="rule"></div>
         <h2 style="margin-bottom: 18px">Grounded in research on how people see their own aging.</h2>
-        <p class="body" style="margin: 0 0 22px">The cards come from HCI research with older adults. They were developed and tested in people’s homes.</p>
+        <p class="body" style="margin: 0 0 22px">Midstream builds on HCI research with older adults, including reflection materials developed and tested in people’s homes.</p>
         <button type="button" class="textlink" data-go="research">Explore the research →</button>
       </div>
       <img src="images/three-cards.jpg" alt="Three Midstream reflection cards: Someone Needed Me, One Courageous No, Changed with Age" style="display: block; width: 100%; height: auto">
     </div>
   </section>
 
-  <section id="join" class="tinted">
+  <section>
     <div style="max-width: 720px; margin: 0 auto; padding: 72px 24px; text-align: center">
-      <h2 style="font-size: 36px; margin-bottom: 12px">Join a pilot workshop.</h2>
-      <p class="body" style="margin: 0">The first workshops are free, for small groups of 6 to 10 people going through a change in midlife or later life. To take part, or to hear when they start, write to <a href="mailto:neetakhanuja@gmail.com">neetakhanuja@gmail.com</a>.</p>
+      <h2 style="font-size: 36px; margin-bottom: 12px">Help shape Midstream.</h2>
+      <p class="body" style="margin: 0 0 24px">Midstream is in development. Find out how it is being developed and how to take part.</p>
+      <button type="button" class="btn" data-go="participate">Participate →</button>
     </div>
   </section>
 </div>
 
-<!-- PROGRAM -->
-<div class="tab" id="tab-program" hidden>
-  <section class="wrap" style="padding-top: 48px; padding-bottom: 56px">
-    <p class="label">The program</p><div class="rule"></div>
-    <h1 style="font-size: clamp(36px, 5vw, 50px); max-width: 760px; margin-bottom: 18px">Four sessions to explore what is changing.</h1>
-    <p class="lead" style="margin: 0; max-width: 680px">A small group meets four times with a facilitator. Each person starts from their own situation. The facilitator uses the cards to follow what comes up, keeps track of which parts of life have been discussed, and turns to the others in later sessions. By the fourth session, all nine have been touched.</p>
+<!-- HOW IT WORKS -->
+<div class="tab" id="tab-how" hidden>
+  <section class="wrap" style="padding-top: 48px; padding-bottom: 40px">
+    <p class="label">How it works</p><div class="rule"></div>
+    <h1 style="font-size: clamp(36px, 5vw, 50px); max-width: 780px; margin-bottom: 18px">From a life change to a Transition Map.</h1>
+    <p class="lead" style="margin: 0; max-width: 700px">A person describes the change they are going through. Over an illustrative four-week program, structured conversations explore how it touches different parts of their life. Only then does Midstream offer tentative patterns, which the person reviews, and possible next steps.</p>
   </section>
+
   <section class="wrap" style="padding-bottom: 72px">
-    <p class="label" style="margin-bottom: 16px">One possible path · following Robert</p>
-    <div style="overflow-x: auto">
-      <table class="grid" id="grid">
-        <thead><tr><th scope="col"></th><th scope="col">Session 1</th><th scope="col">Session 2</th><th scope="col">Session 3</th><th scope="col">Session 4</th></tr></thead>
-        <tbody></tbody>
-      </table>
+    <p class="label" style="margin-bottom: 14px">Scripted demonstration · following Robert</p>
+    <div class="journey-steps" role="tablist" aria-label="Stages of Robert's journey" id="journey-steps"></div>
+
+    <div class="stage" id="stage-1" role="tabpanel">
+      <div class="split" style="align-items: start; gap: 48px">
+        <div>
+          <h2 style="margin-bottom: 18px">1 · Begin with a life change</h2>
+          <p class="body" style="margin: 0 0 14px">Robert opens Midstream and chooses the change he is going through.</p>
+          <div class="chips" style="margin-bottom: 22px" id="transition-chips"></div>
+          <div class="small" style="margin-bottom: 6px">In his own words</div>
+          <p class="serif" style="margin: 0; font-size: 22px; line-height: 1.45">“My son hired a lawn service while I was recovering. They cut it all wrong, and nobody listens when I say so.”</p>
+        </div>
+        <div class="box" style="padding: 28px">
+          <div class="small" style="margin-bottom: 10px">Before the first conversation, Midstream explains</div>
+          <ul class="body" style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px">
+            <li>The program: in this example, four weekly conversations.</li>
+            <li>What is saved between sessions, and that he can delete it.</li>
+            <li>That interpretations come later, and he reviews each one.</li>
+            <li>Its limits: Midstream is not therapy, does not diagnose, and points to human help when a concern is serious.</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="small" style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 18px; align-items: center">
-      <span><span class="mark first" style="background: #8A7E72; border-color: #8A7E72"></span> first comes up</span>
-      <span><span class="mark" style="border-color: #8A7E72"></span> comes back</span>
+
+    <div class="stage" id="stage-2" role="tabpanel" hidden>
+      <div class="split" style="align-items: start; gap: 48px">
+        <div>
+          <h2 style="margin-bottom: 18px">2 · Structured conversations</h2>
+          <div class="convo" id="convo"></div>
+          <p class="note" style="margin: 14px 0 0">One excerpt from one conversation. The questions are illustrative, informed by feeling valued, agency and self-efficacy. The system would use approved card prompts and Robert’s earlier answers. It does not form an interpretation after a few questions.</p>
+        </div>
+        <div class="box" style="padding: 28px">
+          <div class="small" style="margin-bottom: 10px">How the conversation is structured</div>
+          <ul class="body" style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px">
+            <li>It starts from Robert’s own account.</li>
+            <li>Each question comes from a domain in the framework and is adapted to what he has said.</li>
+            <li>The system tracks which domains have been explored.</li>
+            <li>Not every domain will be relevant to every person.</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <p class="body" style="margin: 20px 0 0; max-width: 760px">Robert talks about the same concern in every session: the lawn service, and how it makes him feel. Each session follows his words into different parts of his life, and some parts come back more than once. Another person’s grid would fill in a different order.</p>
+
+    <div class="stage" id="stage-3" role="tabpanel" hidden>
+      <h2 style="margin-bottom: 18px">3 · Understanding across sessions</h2>
+      <div style="overflow-x: auto">
+        <table class="grid" id="grid">
+          <thead><tr><th scope="col"></th><th scope="col">Session 1</th><th scope="col">Session 2</th><th scope="col">Session 3</th><th scope="col">Session 4</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="small" style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 18px; align-items: center">
+        <span><span class="mark" style="background: #8A7E72; border-color: #8A7E72"></span> explored</span>
+        <span><span class="mark" style="border-color: #8A7E72"></span> revisited</span>
+        <span><span class="mark def" style="border-color: #8A7E72"></span> deferred</span>
+        <span><span class="lessrel">×</span> marked less relevant by Robert</span>
+      </div>
+      <div class="small" style="margin: 36px 0 12px">Each session builds on the last</div>
+      <div class="g3" style="gap: 16px" id="continuity"></div>
+      <p class="note" style="margin: 18px 0 0">No interpretation or advice after each answer. With Robert’s consent, Midstream keeps a record across sessions.</p>
+    </div>
+
+    <div class="stage" id="stage-4" role="tabpanel" hidden>
+      <div class="review">
+        <p class="label" style="margin-bottom: 6px">Robert reviews</p>
+        <h2 style="margin-bottom: 18px">4 · Review possible patterns</h2>
+        <div class="box" style="padding: 28px; margin-bottom: 24px">
+          <div class="small" style="margin-bottom: 8px">Midstream’s tentative observation</div>
+          <p class="serif" style="margin: 0; font-size: 23px; line-height: 1.45">“You have described changes in how decisions are made at home and fewer opportunities to contribute through activities that have been important to you. Do these observations reflect your experience?”</p>
+        </div>
+        <div class="g2" style="margin-bottom: 24px">
+          <div>
+            <div class="small" style="margin-bottom: 10px">What Robert said</div>
+            <div style="display: flex; flex-direction: column; gap: 10px" id="said"></div>
+          </div>
+          <div>
+            <div class="small" style="margin-bottom: 10px">What Midstream is inferring</div>
+            <div style="display: flex; flex-direction: column; gap: 10px" id="inferred"></div>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center" id="decide"></div>
+        <p class="body" style="margin: 16px 0 0; min-height: 28px" id="decide-result" aria-live="polite"></p>
+        <p class="note" style="margin: 8px 0 0">Interpretations are tentative. They are not psychological facts, and nothing is recommended until Robert has reviewed them.</p>
+      </div>
+    </div>
+
+    <div class="stage" id="stage-5" role="tabpanel" hidden>
+      <h2 style="margin-bottom: 18px">5 · Explore possible next steps</h2>
+      <p class="body" style="margin: 0 0 24px; max-width: 700px">Working only from the patterns Robert approved, Midstream suggests some directions, each with its tradeoffs. Robert chooses one, or decides to wait.</p>
+      <div class="g3" id="options"></div>
+      <p class="note" style="margin: 18px 0 0">Possibilities, not prescriptions. The system supports the decision; Robert makes it.</p>
+    </div>
+
+    <div class="stage" id="stage-6" role="tabpanel" hidden>
+      <div class="split" style="align-items: start; gap: 48px">
+        <div>
+          <h2 style="margin-bottom: 18px">6 · Revisit and continue</h2>
+          <p class="body" style="margin: 0 0 16px">At the end of the program, Robert keeps a Transition Map with the dimensions explored, the themes he confirmed, what matters to him, and the next step he chose.</p>
+          <p class="body" style="margin: 0">An optional companion could later let him return to earlier reflections and update his priorities as his recovery goes on. This is a possible future feature.</p>
+        </div>
+        <div class="box" style="padding: 32px">
+          <div style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 12px; letter-spacing: 0.12em; color: var(--muted)"><span>TRANSITION MAP · EXAMPLE</span><span>Robert · after week 4</span></div>
+          <div class="serif" style="margin: 16px 0 20px; font-size: 27px; line-height: 1.2">Stepping back after knee surgery</div>
+          <div style="font-size: 12px; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 10px">DIMENSIONS EXPLORED</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px" id="map-tags"></div>
+          <div style="border-top: 1px solid var(--line); padding-top: 14px; margin-bottom: 14px">
+            <div style="font-size: 12px; letter-spacing: 0.12em; color: var(--muted)">THEMES HE CONFIRMED</div>
+            <div class="serif" style="margin-top: 4px; font-size: 19px">Decisions about the house are made without him. He has fewer ways to contribute through things he values.</div>
+          </div>
+          <div style="border-top: 1px solid var(--line); padding-top: 14px; margin-bottom: 14px">
+            <div style="font-size: 12px; letter-spacing: 0.12em; color: var(--muted)">WHAT MATTERS TO HIM</div>
+            <div class="serif" style="margin-top: 4px; font-size: 19px">Being asked about the house, and still being useful to others.</div>
+          </div>
+          <div style="border-top: 1px solid var(--line); padding-top: 14px">
+            <div style="font-size: 12px; letter-spacing: 0.12em; color: var(--muted)">NEXT STEP HE CHOSE</div>
+            <div class="serif" style="margin-top: 4px; font-size: 19px">Talk with his son about which household decisions he wants to stay involved in.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+      <button type="button" class="chip" id="stage-prev">← Previous</button>
+      <button type="button" class="btn" id="stage-next">Next stage →</button>
+      <span class="note" style="margin-left: 8px">Scripted demonstration. Robert is fictional, and the conversation is illustrative.</span>
+    </div>
+  </section>
+
+  <section class="section tinted">
+    <div class="wrap split" style="align-items: start">
+      <div>
+        <p class="label">The program</p><div class="rule"></div>
+        <h2>Four conversations. A fuller picture.</h2>
+      </div>
+      <div>
+        <div class="g2" style="gap: 18px 24px" id="week-preview"></div>
+        <button type="button" class="textlink" data-go="model" style="margin-top: 26px">Next: the model →</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- MODEL -->
+<div class="tab" id="tab-model" hidden>
+  <section class="wrap" style="padding-top: 48px; padding-bottom: 56px">
+    <p class="label">The model</p><div class="rule"></div>
+    <h1 style="font-size: clamp(36px, 5vw, 50px); max-width: 780px; margin-bottom: 18px">Three AI-supported functions, with the person in control.</h1>
+    <p class="lead" style="margin: 0 0 14px; max-width: 700px">Midstream combines a research-derived framework with three proposed functions. The person reviews every interpretation before anything is recommended.</p>
+    <p class="note" style="margin: 0">Planned architecture. None of the functions has been implemented or validated.</p>
   </section>
 
   <section class="section tinted">
     <div class="wrap">
-      <p class="label">Inside a session</p><div class="rule"></div>
-      <div class="split" style="align-items: start; gap: 56px">
-        <div>
-          <h2 style="margin-bottom: 28px">A card, a question, the group, a next step.</h2>
-          <div style="display: flex; flex-direction: column; gap: 18px" id="session-steps"></div>
-        </div>
-        <div class="box" style="padding: 28px; display: flex; flex-direction: column; gap: 12px">
-          <img src="images/someone-needed-me.png" alt="Someone Needed Me card" style="display: block; width: 220px; max-width: 100%; height: auto; margin: -12px auto -6px">
-          <div class="small">Robert · session 1 · feeling valued</div>
-          <div class="serif" style="font-size: 22px; line-height: 1.4">“Before the surgery, who looked after the lawn? What did it mean to you to be the one doing it?”</div>
-          <div class="body" style="font-size: 16px">Robert answers about his forty years of looking after the house. Another member of the group asks where people used to stop him for advice, and the next card follows from there.</div>
-          <p class="note" style="margin: 4px 0 0; font-size: 13px">Illustrative example, not a participant’s account.</p>
-        </div>
-      </div>
+      <p class="label">The workflow</p><div class="rule"></div>
+      <h2 style="margin-bottom: 32px; max-width: 680px">Interviewer, Analyzer, the person’s review, Recommender.</h2>
+      <div class="g4" id="agents"></div>
     </div>
   </section>
 
   <section class="section">
-    <div class="wrap split" style="align-items: start">
-      <div>
-        <p class="label">What each person keeps</p><div class="rule"></div>
-        <h2 style="margin-bottom: 18px">A transition map they can revise.</h2>
-        <p class="body" style="margin: 0">In the last session, each person fills in a transition map: the parts of life the change touched, what they noticed, and a next step they chose. They can share it with someone they trust.</p>
-      </div>
-      <div class="box" style="padding: 32px">
-        <div style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 12px; letter-spacing: 0.12em; color: var(--muted)"><span>TRANSITION MAP · EXAMPLE</span><span>Robert · after session 4</span></div>
-        <div class="serif" style="margin: 16px 0 20px; font-size: 27px; line-height: 1.2">Stepping back after knee surgery</div>
-        <div style="font-size: 12px; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 10px">PARTS OF LIFE THIS TOUCHED</div>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px" id="map-tags"></div>
-        <div style="border-top: 1px solid var(--line); padding-top: 14px; margin-bottom: 14px">
-          <div style="font-size: 12px; letter-spacing: 0.12em; color: var(--muted)">WHAT HE NOTICED</div>
-          <div class="serif" style="margin-top: 4px; font-size: 19px">Decisions about the house were made without him, and being useful to others still matters to him.</div>
-        </div>
-        <div style="border-top: 1px solid var(--line); padding-top: 14px">
-          <div style="font-size: 12px; letter-spacing: 0.12em; color: var(--muted)">NEXT STEP HE CHOSE</div>
-          <div class="serif" style="margin-top: 4px; font-size: 19px">Ask his son to plan the garden with him for next spring.</div>
-        </div>
-      </div>
+    <div class="wrap">
+      <p class="label">What the design depends on</p><div class="rule"></div>
+      <h2 style="margin-bottom: 32px; max-width: 680px">Structure, context, uncertainty and agency.</h2>
+      <div class="rows" id="principles"></div>
     </div>
-    <div class="wrap" style="margin-top: 48px"><button type="button" class="textlink" data-go="offerings">Next: ways to take part →</button></div>
-  </section>
-</div>
-
-<!-- OFFERINGS -->
-<div class="tab" id="tab-offerings" hidden>
-  <section class="wrap" style="padding-top: 48px; padding-bottom: 56px">
-    <p class="label">Offerings</p><div class="rule"></div>
-    <h1 style="font-size: clamp(36px, 5vw, 50px); max-width: 760px; margin-bottom: 18px">Three ways to take part.</h1>
-    <p class="lead" style="margin: 0; max-width: 680px">All three use the same card deck and the same approach. They can run in person or online, for individuals or through organizations.</p>
-  </section>
-  <section class="wrap" style="padding-bottom: 72px">
-    <div class="g3" id="offerings"></div>
-    <p class="note" style="margin: 18px 0 0">Pilot workshops are free. Prices will be set after the pilot.</p>
   </section>
 
   <section class="section tinted">
-    <div class="wrap split" style="align-items: start">
-      <div>
-        <p class="label">Who it is for</p><div class="rule"></div>
-        <h2 style="margin-bottom: 18px">People in the middle of a change.</h2>
-        <p class="body" style="margin: 0">Midstream is for adults in midlife and later life who are going through a transition and want to understand what it is changing. Groups are small, so everyone has time to speak.</p>
-      </div>
-      <div>
-        <p class="label">Where technology fits</p><div class="rule"></div>
-        <h2 style="margin-bottom: 18px">People run the sessions.</h2>
-        <p class="body" style="margin: 0">Digital tools, such as a digital version of the cards, may support the sessions later. The sessions themselves are led by a facilitator.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
     <div class="wrap">
       <p class="label">Our commitments</p><div class="rule"></div>
       <h2 style="margin-bottom: 28px">What Midstream will not do.</h2>
       <div class="g3" style="gap: 16px 28px" id="commitments"></div>
-      <div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center">
-        <a class="btn" href="#join" data-go="overview" data-scroll="join">Join a pilot workshop</a>
-        <button type="button" class="textlink" data-go="research">Next: the research →</button>
-      </div>
+      <div style="margin-top: 48px"><button type="button" class="textlink" data-go="research">Next: the research →</button></div>
     </div>
   </section>
 </div>
@@ -226,7 +303,7 @@
       <p class="label">Research</p><div class="rule"></div>
       <h1 style="font-size: clamp(36px, 5vw, 50px); margin-bottom: 18px">Nine parts of how we see ourselves aging.</h1>
       <p class="lead" style="margin: 0 0 16px">How people see their own aging is linked to their physical, emotional and cognitive wellbeing in later life. These views take shape during transitions: leaving work, an emptier home, caring for a parent, a change in health.</p>
-      <p class="body" style="margin: 0">Research on self-perceptions of aging describes nine aspects. Midstream sessions cover all nine, so the conversation reaches the parts of life a change touches, even when the person does not name them.</p>
+      <p class="body" style="margin: 0">Research on self-perceptions of aging describes nine aspects. Midstream uses them as the starting framework for its conversations, so a conversation can reach parts of life a concern touches, even when the person does not name them.</p>
     </div>
     <div style="border-top: 1px solid #E2D9CC" id="aspects"></div>
   </section>
@@ -237,8 +314,8 @@
       <div class="split">
         <div>
           <h2 style="margin-bottom: 18px">The cards guide the questions.</h2>
-          <p class="body" style="margin: 0 0 16px">Midstream uses a deck of reflection cards developed and tested in research with older adults. Each card belongs to one of the nine aspects.</p>
-          <p class="body" style="margin: 0">The facilitator uses a card to ask a question about each person’s own situation, starting from what they have already said.</p>
+          <p class="body" style="margin: 0 0 16px">Midstream builds on a deck of reflection cards developed and tested in research with older adults. Each card belongs to one of the nine aspects.</p>
+          <p class="body" style="margin: 0">The Interviewer would use a card’s prompt to write a question for the person, starting from what they have already said. This keeps the conversation structured.</p>
         </div>
         <img src="images/deck.jpg" alt="The Stories card deck with two cards drawn: Daily Meeting Place and It Gave Me Hope" style="display: block; width: 100%; height: auto">
       </div>
@@ -250,17 +327,80 @@
   <section class="section">
     <div class="wrap split" style="align-items: start">
       <div>
-        <p class="label">Limits</p><div class="rule"></div>
-        <h2 style="font-size: 36px; margin-bottom: 18px">What still needs testing.</h2>
-        <p class="body" style="margin: 0 0 16px">The nine aspects come from aging research. Whether the sessions help people, and whether they work for transitions outside later life, still needs testing. The pilot workshops are the first step.</p>
-        <p class="body" style="margin: 0">The aspects organize a conversation. They are not a clinical or diagnostic instrument.</p>
+        <p class="label">Culturally situated research</p><div class="rule"></div>
+        <h2 style="font-size: 36px; margin-bottom: 18px">Reflection materials tested in people’s homes.</h2>
+        <p class="body" style="margin: 0">The framework comes from research with older adults in urban India, where family roles and expectations shape how people see aging. In one study, all 24 participants returned a completed seven-day reflection booklet. How people describe these experiences differs across cultures, so the framework will need adaptation elsewhere.</p>
       </div>
       <div>
-        <p class="label">The plan</p><div class="rule"></div>
-        <div style="display: flex; flex-direction: column; gap: 16px" id="roadmap"></div>
+        <p class="label">Publication</p><div class="rule"></div>
+        <p class="body" style="margin: 0; font-size: 16px">Khanuja, N., Nisi, V. and Forlizzi, J. Designing Aging Reflection Probes to Elicit Self-Perception of Aging (SPA) Beliefs of Older Adults in India. ACM DIS 2025. <a href="https://doi.org/10.1145/3715336.3735430">doi.org/10.1145/3715336.3735430</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tinted">
+    <div class="wrap split" style="align-items: start">
+      <div>
+        <p class="label">Limits</p><div class="rule"></div>
+        <h2 style="font-size: 36px; margin-bottom: 18px">Where the research ends and the product begins.</h2>
+      </div>
+      <div class="body">
+        <p style="margin: 0 0 16px">The nine aspects come from research on aging. That research informs Midstream, but it does not show that the complete model works across life transitions.</p>
+        <p style="margin: 0 0 16px">The framework, the three functions, and any claim about clarity or better decisions all still need testing.</p>
+        <p style="margin: 0">The aspects organize a conversation. They are not a clinical or diagnostic instrument.</p>
       </div>
     </div>
     <p class="wrap body" style="margin-top: 56px">Developed by Neeta Khanuja, designer and HCI researcher · <a href="https://www.neetakhanuja.com">neetakhanuja.com</a></p>
+  </section>
+</div>
+
+<!-- PARTICIPATE -->
+<div class="tab" id="tab-participate" hidden>
+  <section class="wrap" style="padding-top: 48px; padding-bottom: 56px">
+    <p class="label">Participate</p><div class="rule"></div>
+    <h1 style="font-size: clamp(36px, 5vw, 50px); max-width: 760px; margin-bottom: 18px">Midstream is in development.</h1>
+    <p class="lead" style="margin: 0; max-width: 680px">We are developing the framework and the conversation design. No pilot has been run, and no AI service is available yet.</p>
+  </section>
+
+  <section class="section tinted">
+    <div class="wrap split" style="align-items: start">
+      <div>
+        <p class="label">The plan</p><div class="rule"></div>
+        <h2>From framework to evaluation.</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px" id="roadmap"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items: start">
+      <div>
+        <p class="label">Facilitated sessions</p><div class="rule"></div>
+        <h2 style="margin-bottom: 18px">Workshops as a research method.</h2>
+        <p class="body" style="margin: 0">Before anything is automated, human facilitators may enact parts of the workflow with small groups and individuals. These sessions are how Midstream is developed. They are not the product.</p>
+      </div>
+      <div class="rows" id="methods"></div>
+    </div>
+  </section>
+
+  <section class="section tinted">
+    <div class="wrap split" style="align-items: start">
+      <div>
+        <p class="label">A separate exploration</p><div class="rule"></div>
+        <h2 style="margin-bottom: 18px">Midstream Care.</h2>
+        <p class="body" style="margin: 0 0 22px">We are also exploring reflection and communication for people facing changes in health. This is a separate, early concept.</p>
+        <a class="textlink" href="care/">Read about Midstream Care →</a>
+      </div>
+      <p class="note" style="margin: 0">Midstream does not process clinical data, does not integrate with health systems, and does not yet have the privacy infrastructure required for healthcare use.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div style="max-width: 720px; margin: 0 auto; padding: 72px 24px; text-align: center">
+      <h2 style="font-size: 36px; margin-bottom: 12px">Get involved.</h2>
+      <p class="body" style="margin: 0 0 24px">If you are going through a life transition and would like to take part in future research sessions, or you are a researcher or potential collaborator, we would like to hear from you.</p>
+      <a class="btn" href="mailto:neetakhanuja@gmail.com">Write to neetakhanuja@gmail.com</a>
+    </div>
   </section>
 </div>
 
@@ -268,11 +408,11 @@
 
 <footer class="site">
   <div class="wrap">
-    <div>Midstream · concept in development · 2026</div>
-    <div>Supports reflection. It is not therapy and does not diagnose.</div>
+    <div>Midstream · a proposed system in development · 2026</div>
+    <div>Supports reflection and decisions. It is not therapy and does not diagnose.</div>
   </div>
 </footer>
 
-<script src="script.js?v=7"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>
